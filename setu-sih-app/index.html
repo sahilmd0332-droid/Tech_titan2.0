@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setu 2.0 — Official Government Scheme & Concessional Credit Portal | MoSJE</title>
+  <meta name="description" content="Official Government of India Scheme Recommendation and Concessional Finance Portal under Ministry of Social Justice & Empowerment. Discover verified schemes up to ₹1 Crore.">
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="topbar">
+  <div class="topbar-container">
+    <div class="brand-section">
+      <div class="brand-emblem-seal">🏛️</div>
+      <div class="brand-title-wrap">
+        <a href="#" class="brand-mark" id="brandLogo">
+          <span>Setu</span>
+          <span class="emblem">2.0</span>
+        </a>
+        <div class="brand-subtitle">Ministry of Social Justice & Empowerment · Government Scheme Portal</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="btnNavCalc">
+        📊 <span>EMI Calculator</span>
+      </button>
+      <button type="button" class="btn-icon" id="btnOpenAIChat">
+        🤖 <span>AI Assistant</span>
+      </button>
+      <button type="button" class="btn-icon" id="btnOpenSettings" title="API Settings">
+        ⚙️
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation Flow Bar (No 'Step 1' text in frontend) -->
+<div class="flow-nav-wrap">
+  <div class="flow-breadcrumbs" role="navigation" aria-label="Portal Navigation">
+    <div class="flow-item active" id="navItemProfile" data-section="profile">
+      <span class="item-icon">📝</span>
+      <span>Applicant Profile</span>
+    </div>
+    <span class="flow-separator">›</span>
+
+    <div class="flow-item" id="navItemSchemes" data-section="schemes">
+      <span class="item-icon">🏛️</span>
+      <span>Available Schemes</span>
+    </div>
+    <span class="flow-separator">›</span>
+
+    <div class="flow-item" id="navItemDetails" data-section="details">
+      <span class="item-icon">📋</span>
+      <span>Application Guide & Partner Locator</span>
+    </div>
+    <span class="flow-separator">›</span>
+
+    <div class="flow-item" id="navItemCalc" data-section="calculator">
+      <span class="item-icon">📊</span>
+      <span>EMI & Subsidy Calculator</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Container -->
+<main class="portal-container" id="main-content">
+
+  <!-- ==========================================
+       SECTION 1: APPLICANT PROFILE & INTAKE
+       ========================================== -->
+  <section class="portal-section active" id="section-profile">
+    
+    <!-- Hero Banner -->
+    <div class="portal-hero">
+      <h1>National Scheme Allocation & Concessional Finance Portal</h1>
+      <p>
+        Discover central and state government schemes tailored to your enterprise, education, and social profile. All interest subventions, capital subsidies, and collateral guarantees are provided directly through official Ministry channels up to <strong>₹1 Crore</strong>.
+      </p>
+      <div class="portal-hero-badges">
+        <span class="hero-pill">✓ SIH 2026 Problem Statement 92</span>
+        <span class="hero-pill">✓ MoSJE Statutory Guidelines</span>
+        <span class="hero-pill">✓ Capped up to ₹1 Crore (₹1,00,00,000)</span>
+        <span class="hero-pill">✓ 100% In-App Application Guidance</span>
+      </div>
+    </div>
+
+    <!-- Profile Form -->
+    <form id="profileForm">
+      
+      <!-- Card 1: Applicant Demographics -->
+      <div class="card">
+        <div class="card-title-row">
+          <span class="card-title-icon">👤</span>
+          <h2>Applicant Demographics & Social Category</h2>
+        </div>
+
+        <div class="form-grid-3">
+          <div class="field-group">
+            <label for="userCategory">Social Category *</label>
+            <select id="userCategory" required>
+              <option value="SC" selected>SC (Scheduled Caste)</option>
+              <option value="ST">ST (Scheduled Tribe)</option>
+              <option value="OBC">OBC (Backward Class)</option>
+              <option value="General">General / Open</option>
+              <option value="EWS">EWS (Economically Weaker)</option>
+              <option value="SafaiKaramchari">Safai Karamchari / Sanitation Worker</option>
+            </select>
+            <span class="field-hint">Primary beneficiary category</span>
+          </div>
+
+          <div class="field-group">
+            <label for="userAge">Age (Years) *</label>
+            <input type="number" id="userAge" min="18" max="75" value="28" required>
+            <span class="field-hint">Stand-Up India requires age ≥ 18</span>
+          </div>
+
+          <div class="field-group">
+            <label>Gender *</label>
+            <div class="radio-chips">
+              <label class="chip-label active">
+                <input type="radio" name="userGender" value="male" checked> Male
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="userGender" value="female"> Female
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="userGender" value="transgender"> Other
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group" style="margin-top: 2px;">
+          <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; font-weight:normal;">
+            <input type="checkbox" id="userPwD" style="width:18px; height:18px; min-height:auto;">
+            <strong>Differently Abled (PwD) Applicant</strong> — unlocks extra interest concessions and priority quota
+          </label>
+        </div>
+
+        <div class="form-grid-3" style="margin-top: 14px;">
+          <div class="field-group">
+            <label for="userState">State / UT *</label>
+            <select id="userState" required></select>
+            <span class="field-hint">For assigning state channel partner</span>
+          </div>
+
+          <div class="field-group">
+            <label for="userDistrict">District / City</label>
+            <input type="text" id="userDistrict" placeholder="e.g. Pune, Jaipur, Patna" value="Mumbai">
+          </div>
+
+          <div class="field-group">
+            <label>Location Area Type</label>
+            <div class="radio-chips">
+              <label class="chip-label active">
+                <input type="radio" name="userArea" value="urban" checked> Urban
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="userArea" value="rural"> Rural (35% Subsidy)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Enterprise & Funding Requirements -->
+      <div class="card">
+        <div class="card-title-row">
+          <span class="card-title-icon">💼</span>
+          <h2>Enterprise, Course & Funding Requirements</h2>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field-group">
+            <label>Funding Purpose *</label>
+            <div class="radio-chips">
+              <label class="chip-label active">
+                <input type="radio" name="userPurpose" value="business" checked> Business / Enterprise
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="userPurpose" value="education"> Higher Education
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Venture Type</label>
+            <div class="radio-chips">
+              <label class="chip-label active">
+                <input type="radio" name="userVenture" value="greenfield" checked> Greenfield (New Setup)
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="userVenture" value="brownfield"> Brownfield (Expansion)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid-2" style="margin-top: 8px;">
+          <div class="field-group">
+            <label for="userCost">Estimated Project / Course Cost (₹) *</label>
+            <input type="number" id="userCost" min="10000" max="10000000" step="10000" value="2500000" required>
+            <div class="input-formatted-hint" id="costFormattedHint">₹25,00,000 (25.00 Lakh)</div>
+            <span class="field-hint">Supports from ₹10,000 up to ₹1,00,00,000 (₹1 Crore max)</span>
+          </div>
+
+          <div class="field-group">
+            <label for="userIncome">Annual Family Income (₹) *</label>
+            <input type="number" id="userIncome" min="0" max="50000000" step="10000" value="380000" required>
+            <div class="input-formatted-hint" id="incomeFormattedHint">₹3,80,000 (3.80 Lakh)</div>
+            <span class="field-hint">NSFDC schemes cap at ₹5 Lakh; Stand-Up & PMEGP have no income cap</span>
+          </div>
+        </div>
+
+        <div class="form-grid-2" style="margin-top: 8px;">
+          <div class="field-group">
+            <label for="userMargin">Your Available Self-Contribution / Margin (%)</label>
+            <input type="number" id="userMargin" min="5" max="50" step="1" value="15">
+            <span class="field-hint">Promoter share available (typically 5% to 15% required by banks)</span>
+          </div>
+
+          <div class="field-group">
+            <label for="userSector">Business Sector</label>
+            <select id="userSector">
+              <option value="Manufacturing" selected>Manufacturing & Fabrication</option>
+              <option value="Services">Services (Logistics, IT, Clinic)</option>
+              <option value="Trading">Trading & Retail Store</option>
+              <option value="Agri-Allied">Agri-Allied (Food, Dairy, Fisheries, Solar)</option>
+              <option value="Clean Energy">Green & Clean Energy (Solar, EV)</option>
+              <option value="Handicrafts">Handicrafts & Traditional Artisans</option>
+              <option value="Tech / Innovation">Tech Startup & Innovation</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Action -->
+      <div style="text-align:center; margin-top:24px;">
+        <button type="submit" class="btn btn-primary" style="width:100%; max-width:440px; font-size:16px;">
+          Check Available Government Schemes →
+        </button>
+      </div>
+    </form>
+  </section>
+
+
+  <!-- ==========================================
+       SECTION 2: AVAILABLE GOVERNMENT SCHEMES
+       ========================================== -->
+  <section class="portal-section" id="section-schemes">
+    <div class="results-header-bar">
+      <div>
+        <button type="button" class="btn-back" id="btnBackToProfile">
+          ← Edit Profile
+        </button>
+      </div>
+      <div>
+        <span class="badge-available" id="schemesCountBadge">Evaluating Schemes...</span>
+      </div>
+    </div>
+
+    <div class="results-count-title">
+      <h2>Government Schemes Available for Your Profile</h2>
+      <p>Based on your demographic details, project quantum, and category, the following verified schemes are available for you:</p>
+    </div>
+
+    <!-- Government Interest Subvention Notice -->
+    <div class="govt-subsidy-card">
+      <div class="badge-icon">🏛️</div>
+      <div>
+        <h4>Government-Borne Interest & Subsidies</h4>
+        <p>Under MoSJE and central guidelines, you do not pay high commercial bank rates. The Government subsidizes the interest (e.g. 100% interest subvention during study/moratorium, up to 35% non-refundable capital grants, or 100% sovereign credit guarantees).</p>
+      </div>
+    </div>
+
+    <!-- Container for Schemes List (No percentage matches) -->
+    <div id="availableSchemesList">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       SECTION 3: SCHEME APPLICATION GUIDE & PARTNER LOCATOR
+       ========================================== -->
+  <section class="portal-section" id="section-details">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:10px;">
+      <button type="button" class="btn-back" id="btnBackToSchemes">
+        ← Back to Available Schemes
+      </button>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="btn-back" id="btnGoToCalcFromDetails">
+          📊 Calculate EMI
+        </button>
+        <button type="button" class="btn-back" id="btnEditProfileFromDetails">
+          ✏️ Edit Profile
+        </button>
+      </div>
+    </div>
+
+    <!-- Scheme Dossier & Application Roadmap -->
+    <div id="schemeDetailsContainer">
+      <!-- Injected dynamically by app.js -->
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       SECTION 4: DEDICATED EMI & SUBSIDY CALCULATOR
+       ========================================== -->
+  <section class="portal-section" id="section-calculator">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+      <button type="button" class="btn-back" id="btnBackFromCalc">
+        ← Back
+      </button>
+      <span class="badge-available">Interactive Loan & Subsidy Calculator</span>
+    </div>
+
+    <div class="results-count-title" style="margin-bottom:20px;">
+      <h2>Concessional Loan, EMI & Government Subsidy Calculator</h2>
+      <p>Calculate your exact monthly repayment installment factoring in statutory principal moratoriums and government interest subventions up to ₹1 Crore.</p>
+    </div>
+
+    <div class="card">
+      <div class="emi-calc-grid">
+        
+        <!-- Controls Column -->
+        <div>
+          <h3 style="font-size:17px; margin-bottom:14px; border-bottom:1px solid var(--border-line); padding-bottom:8px;">
+            Loan Parameters
+          </h3>
+
+          <div class="field-group" style="margin-bottom:14px;">
+            <label for="emiSchemeSelect">Select Scheme</label>
+            <select id="emiSchemeSelect"></select>
+          </div>
+
+          <div class="field-group" style="margin-bottom:14px;">
+            <label for="emiAmountInput">Loan / Investment Quantum (₹)</label>
+            <input type="number" id="emiAmountInput" min="10000" max="10000000" step="10000" value="2500000">
+            <div class="input-formatted-hint" id="emiAmountFormatted">₹25,00,000 (25.00 Lakh)</div>
+            <span class="field-hint">Supports up to ₹1,00,00,000 (₹1 Crore)</span>
+          </div>
+
+          <div class="field-group" style="margin-bottom:14px;">
+            <label for="emiRateInput">Concessional Interest Rate (% p.a.)</label>
+            <input type="number" id="emiRateInput" min="0" max="20" step="0.1" value="6.0">
+            <span class="field-hint">Fixed or subsidized rate under scheme guidelines</span>
+          </div>
+
+          <div class="form-grid-2" style="margin-bottom:0;">
+            <div class="field-group">
+              <label for="emiTenureInput">Repayment Tenure (Years)</label>
+              <input type="number" id="emiTenureInput" min="1" max="15" value="7">
+            </div>
+
+            <div class="field-group">
+              <label for="emiMoratoriumInput">Moratorium (Months)</label>
+              <input type="number" id="emiMoratoriumInput" min="0" max="36" value="6">
+              <span class="field-hint">Zero principal repayment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Results Column -->
+        <div class="emi-results-panel">
+          <div class="emi-big-metric">
+            <div class="lbl">Estimated Monthly Installment (EMI)</div>
+            <div class="val" id="emiMonthlyDisplay">₹0</div>
+            <div style="font-size:12px; color:var(--text-faint); margin-top:4px;">
+              Payable post-moratorium period
+            </div>
+          </div>
+
+          <div class="emi-breakdown-row">
+            <span class="key">Financed Principal Amount</span>
+            <span class="num" id="emiPrincipalDisplay">₹0</span>
+          </div>
+          <div class="emi-breakdown-row">
+            <span class="key">Total Interest Payable</span>
+            <span class="num" id="emiTotalInterestDisplay">₹0</span>
+          </div>
+          <div class="emi-breakdown-row">
+            <span class="key">Total Repayment Outflow</span>
+            <span class="num" id="emiTotalPayableDisplay">₹0</span>
+          </div>
+          <div class="emi-breakdown-row" style="background:var(--accent-teal-light); padding:8px 10px; border-radius:var(--radius-sm); margin-top:6px;">
+            <span class="key" style="color:var(--accent-teal); font-weight:700;">Government Interest Savings</span>
+            <span class="num" id="emiGovtSavingsDisplay" style="color:var(--accent-teal);">₹0</span>
+          </div>
+
+          <!-- Amortization Schedule Table Preview -->
+          <div style="margin-top:16px;">
+            <div style="font-size:13px; font-weight:700; color:var(--primary-deep); margin-bottom:6px;">
+              Yearly Repayment Schedule
+            </div>
+            <div class="amort-table-wrap">
+              <table class="amort-table">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>Principal Paid</th>
+                    <th>Interest Paid</th>
+                    <th>Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="amortTableBody">
+                  <!-- Injected dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- AI Assistant Modal -->
+<div class="modal-overlay" id="aiChatModal" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3 id="chatModalTitle">🤖 Setu AI Scheme & Document Copilot</h3>
+      <button type="button" class="btn-close" id="btnCloseAIChat" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">
+        Ask any doubt regarding government subsidies, caste certificate requirements, collateral-free credit, or application steps. Responses are concise and tailored to your profile.
+      </p>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-bubble bot">
+          Namaste! I am your <strong>Setu AI Copilot</strong>. How can I help you understand government schemes, document requirements, or interest subsidies today?
+        </div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask a question (e.g. 'Who pays the interest?', 'What documents for SC certificate?')...">
+        <button type="button" class="btn btn-teal" id="btnSendChat">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Gemini API Settings Modal -->
+<div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3 id="settingsModalTitle">Gemini API Key Settings</h3>
+      <button type="button" class="btn-close" id="btnCloseSettings" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:16px;">
+        Add your Google Gemini API key to enable live, customized AI advice. The key is stored locally in your browser and never shared.
+      </p>
+
+      <div class="field-group">
+        <label for="geminiApiKeyInput">Google Gemini API Key</label>
+        <input type="password" id="geminiApiKeyInput" placeholder="AIzaSy...">
+        <span class="field-hint">Get a free key from <a href="https://aistudio.google.com" target="_blank" rel="noopener" style="color:var(--accent-teal); font-weight:600;">Google AI Studio ↗</a></span>
+        <div id="apiKeyStatus" style="font-size:13px; margin-top:6px;"></div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
+        <button type="button" class="btn btn-outline" id="btnCancelSettings">Cancel</button>
+        <button type="button" class="btn btn-teal" id="btnSaveApiKey">Save API Key</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="app-footer">
+  <div>
+    <strong>Setu 2.0</strong> — Official Prototype developed for <strong>SIH 2026 Problem Statement 92</strong> (Ministry of Social Justice & Empowerment).
+  </div>
+  <div style="font-size:12px; margin-top:4px; opacity:0.8;">
+    All official guidelines, required statutory documents, and local partner directory addresses are rendered natively inside this portal.
+  </div>
+</footer>
+
+<!-- Scripts in Order -->
+<script src="js/schemes-data.js"></script>
+<script src="js/matching-engine.js"></script>
+<script src="js/partners-data.js"></script>
+<script src="js/rag-knowledge-base.js"></script>
+<script src="js/gemini-service.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
